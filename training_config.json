@@ -1,0 +1,280 @@
+{
+      "data": {
+            "subsample": 0,
+            "random_state": 42
+      },
+      "skip": [
+            "Linear_onlyT",
+            "Poly_2",
+            "Arrh_onlyT",
+            "Linear_onlyT",
+            "Linear",
+            "Poly_2",
+            "Poly_3",
+            "Arrh_onlyT",
+            "Linear_Arrh",
+            "Poly2_Arrh",
+            "Autofeat_1",
+            "Autofeat_2",
+            "Autofeat_3",
+            "Autofeat_4",
+            "Autofeat_5",
+            "Autofeat_6",
+            "Selected_2"
+      ],
+      "models": {
+            "Linear_onlyT": {
+                  "scaling": "standard",
+                  "stdalpha": 1,
+                  "thresshold": null,
+                  "features": [
+                        "T"
+                  ],
+                  "workflow": "NoGen",
+                  "fit_intercept": true
+            },
+            "Linear": {
+                  "scaling": "standard",
+                  "stdalpha": 1,
+                  "thresshold": null,
+                  "features": [
+                        "T",
+                        "Li",
+                        "PC"
+                  ],
+                  "workflow": "NoGen",
+                  "fit_intercept": true
+            },
+            "Poly_2": {
+                  "scaling": "standard",
+                  "stdalpha": 1,
+                  "thresshold": 2,
+                  "features": [
+                        "T",
+                        "Li",
+                        "PC"
+                  ],
+                  "poly_order": 2,
+                  "workflow": "Poly",
+                  "fit_intercept": true
+            },
+            "Poly_3": {
+                  "scaling": "standard",
+                  "stdalpha": 1,
+                  "thresshold": 2,
+                  "features": [
+                        "T",
+                        "Li",
+                        "PC"
+                  ],
+                  "poly_order": 3,
+                  "workflow": "Poly",
+                  "fit_intercept": true
+            },
+            "Arrh_onlyT": {
+                  "scaling": "standard",
+                  "stdalpha": 1,
+                  "thresshold": null,
+                  "features": [
+                        "T"
+                  ],
+                  "workflow": "NoGenArrh",
+                  "fit_intercept": true
+            },
+            "Linear_Arrh": {
+                  "scaling": "standard",
+                  "stdalpha": 1,
+                  "thresshold": null,
+                  "features": [
+                        "T",
+                        "Li",
+                        "PC"
+                  ],
+                  "workflow": "NoGenArrh",
+                  "fit_intercept": true
+            },
+            "Poly2_Arrh": {
+                  "scaling": "standard",
+                  "stdalpha": 1,
+                  "thresshold": 2,
+                  "features": [
+                        "T",
+                        "Li",
+                        "PC"
+                  ],
+                  "poly_order": 2,
+                  "workflow": "PolyArrh",
+                  "fit_intercept": true
+            },
+            "Autofeat_1": {
+                  "scaling": "standard_nomean",
+                  "stdalpha": 1,
+                  "thresshold": 2,
+                  "features": [
+                        "T",
+                        "Li",
+                        "PC"
+                  ],
+                  "feateng_steps": 6,
+                  "units": {
+                        "T": "1/K",
+                        "Li": "mol/kg"
+                  },
+                  "featsel_runs": 5,
+                  "transformations": [
+                        "sqrt",
+                        "sqrt"
+                  ],
+                  "workflow": "AF",
+                  "fit_intercept": false
+            },
+            "Autofeat_2": {
+                  "scaling": "standard_nomean",
+                  "stdalpha": 1,
+                  "thresshold": 2,
+                  "features": [
+                        "T",
+                        "Li",
+                        "PC"
+                  ],
+                  "feateng_steps": 6,
+                  "units": {
+                        "T": "1/K",
+                        "Li": "mol/kg"
+                  },
+                  "featsel_runs": 5,
+                  "transformations": [
+                        "1/",
+                        "1/"
+                  ],
+                  "workflow": "AF",
+                  "fit_intercept": false
+            },
+            "Autofeat_3": {
+                  "scaling": "standard_nomean",
+                  "stdalpha": 1,
+                  "thresshold": 2,
+                  "features": [
+                        "T",
+                        "Li",
+                        "PC"
+                  ],
+                  "feateng_steps": 6,
+                  "units": {
+                        "T": "1/K",
+                        "Li": "mol/kg"
+                  },
+                  "featsel_runs": 5,
+                  "transformations": [
+                        "^2",
+                        "^3"
+                  ],
+                  "workflow": "AF",
+                  "fit_intercept": false
+            },
+            "Autofeat_4": {
+                  "scaling": "standard_nomean",
+                  "stdalpha": 1,
+                  "thresshold": 2,
+                  "features": [
+                        "T",
+                        "Li",
+                        "PC"
+                  ],
+                  "feateng_steps": 6,
+                  "units": {
+                        "T": "1/K",
+                        "Li": "mol/kg"
+                  },
+                  "featsel_runs": 5,
+                  "transformations": [
+                        "exp",
+                        "log"
+                  ],
+                  "workflow": "AF",
+                  "fit_intercept": false
+            },
+            "Autofeat_5": {
+                  "scaling": "standard_nomean",
+                  "stdalpha": 1,
+                  "thresshold": 2,
+                  "features": [
+                        "T",
+                        "Li",
+                        "PC"
+                  ],
+                  "feateng_steps": 6,
+                  "units": {
+                        "T": "1/K",
+                        "Li": "mol/kg"
+                  },
+                  "featsel_runs": 5,
+                  "transformations": [
+                        "1/",
+                        "sqrt"
+                  ],
+                  "workflow": "AF",
+                  "fit_intercept": false
+            },
+            "Autofeat_6": {
+                  "scaling": "standard_nomean",
+                  "stdalpha": 1,
+                  "thresshold": 2,
+                  "features": [
+                        "T",
+                        "Li",
+                        "PC"
+                  ],
+                  "feateng_steps": 5,
+                  "units": {
+                        "T": "1/K",
+                        "Li": "mol/kg"
+                  },
+                  "featsel_runs": 5,
+                  "transformations": [
+                        "^2",
+                        "^3",
+                        "exp",
+                        "log"
+                  ],
+                  "workflow": "AF",
+                  "fit_intercept": false
+            },
+            "Selected_1": {
+                  "scaling": "standard",
+                  "stdalpha": null,
+                  "thresshold": null,
+                  "features": [
+                        "T",
+                        "Li",
+                        "PC"
+                  ],
+                  "selected terms": [
+                        "Li",
+                        "Li**(5/2)*sqrt(PC)",
+                        "T",
+                        "T**(3/2)*sqrt(sqrt(Li)*T)"
+                  ],
+                  "workflow": "SelectedTerms",
+                  "fit_intercept": false
+            },
+            "Selected_2": {
+                  "scaling": "standard",
+                  "stdalpha": null,
+                  "thresshold": null,
+                  "features": [
+                        "T",
+                        "Li",
+                        "PC"
+                  ],
+                  "selected terms": [
+                        "Li",
+                        "Li**(5/2)*sqrt(PC)",
+                        "T",
+                        "T**(3/2)*sqrt(sqrt(Li)*T)"
+                  ],
+                  "workflow": "SelectedTerms",
+                  "fit_intercept": true
+            }
+      }
+}
