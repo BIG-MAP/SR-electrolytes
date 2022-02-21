@@ -1,0 +1,51 @@
+<!-- See example https://github.com/fragos-playground/bokeh-pages-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="My description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EFlores2022_SR</title>
+</head>
+
+<body>
+    <header>
+        <a href="/"><img alt="Logo" src="./static/logo_bigmap.png" height="70"></a>
+        <a href="/"><img alt="Logo" src="./static/logo_bt2030p.png" height="70"></a>
+        
+
+        <h1>Symbolic regression on Li-ion electrolyte systems</h1>
+            <p>
+            This small app illustrates the predicted conductivity of a Li-ion battery electrolyte as a function of formulation and temperature. <br>
+            The predictions are based on a closed-form expression, found through a symbolic regression algorithm. The electrolyte consist of a <br>
+            LiPF<sub>6</sub> salt and PC/EC/EMC solvent mixture. Check out the <a href="https://github.com/BIG-MAP/SR-electrolytes">Github page</a> 
+            for the code and examples, and the article for full details:<br>
+            <br>
+            Eibar Flores et al., "Learning the laws of electrolyte transport via symbolic regression", <i>Journal Title</i>, 2022, <a href="#">DOI</a>
+            </p>
+            <br>
+
+        <hr>
+
+        <h2>Explore the predictions from the model</h2>
+            <p>
+                The predictions are represented as a contour plot as a function of PC to EC ratio, salt concentration and temperature. <br>
+                Move the slider to control the temperature to explore how conductivity changes in the PC ratio vs LiPF6 concentration space.
+            </p>
+            <embed 
+            type="text/html" 
+            src="./static/standalone_app.html"
+            width="900"
+            height="500"
+            > </embed>
+        
+        <hr>
+
+        <h3>Aknowledgements</h3>
+        <a href="/"><img alt="Logo" src="./static/EU_emblem.jpg" height="70"></a>
+        <p>This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 957189.</p>
+
+    
