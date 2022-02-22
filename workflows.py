@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 import sympy as sp
-from sklearn.preprocessing import PolynomialFeatures, StandardScaler
-from sklearn.linear_model import LassoCV, Lasso, LinearRegression
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LassoCV, Lasso
 from autofeat import AutoFeatRegressor
 
 import trained_workflows as tf
@@ -281,113 +281,6 @@ class WorkflowAF(Workflow):
         self.xtrain_gen = self.af_model.transform(self.xtrain)
 
 
-
-
-
-# class WorkflowAFTinv(WorkflowAF):
-#     def __init__(self, transform_feat_name: str, transform_power: float, **kwargs):
-#         self.transform_feat_name = transform_feat_name
-#         self.transform_power = transform_power
-
-#         super().__init__(**kwargs)
-#         self.invert_temperature()
-
-#     def invert_temperature(self):
-#             self.xtrain['T_inv'] = self.xtrain['T'].pow(-1)
-#             self.xtrain.drop(columns=['T'], inplace=True)
-
-
-
-
-
-
-class WorkflowPoly(Workflow):
-
-    def __init__(self, poly_order, **kwargs):            
-        self.poly_order = poly_order
-        super().__init__(**kwargs)
-
-
-    def generate_features(self):
-   
-        #instantiate and fit polynomial feature model
-        polytransform = PolynomialFeatures(self.poly_order, interaction_only = False)
-        x_polynomial = polytransform.fit_transform(self.xtrain.to_numpy())
-        
-        #create labels of the polynomial features
-        polyfeature_labels = []
-        for row in polytransform.powers_:
-            feat_string=[]
-            for feature_index, feature_label in enumerate(self.xtrain.columns):
-                if row[feature_index]>1:
-                    feat_string.append(feature_label + '^{}'.format(row[feature_index]))
-                elif row[feature_index]==1:
-                    feat_string.append(feature_label)
-            polyfeature_labels.append("*".join(feat_string))        
-        
-        #create new dataframe
-        self.xtrain_gen = pd.DataFrame(x_polynomial,columns=polyfeature_labels).drop(columns=[''])
-
-
-
-
-
-
-class WorkflowNoGen(Workflow):
-
-    def __init__(self, **kwargs):            
-        super().__init__(**kwargs)
-        self.linear_regressor = LinearRegression(fit_intercept= self.fit_intercept)
-        self.xtrain_gen = self.xtrain
-
-
-    def regress_linear(self):
-        self.linear_regressor.fit(self.xtrain_gen_stand, self.ytrain)
-        self.ytrain_hat = self.linear_regressor.predict(self.xtrain_gen_stand)
-        self.coefficients = self.linear_regressor.coef_
-        self.intercept = self.linear_regressor.intercept_
-
-    
-    def run_workflow(self):
-
-        self.standardize()
-        self.regress_linear()
-        self.generate_coeff_table()
-        self.correct_coeffs()
-
-        return self.get_trained_workflow()
-
-
-
-class WorkflowNoGenArrh(WorkflowNoGen):
-
-    def __init__(self, **kwargs):            
-        super().__init__(**kwargs)
-        self.ytrain = self.ytrain.apply(np.log)
-
-
-    def get_trained_workflow(self):
-        return tf.TrainedWorkflowArrh(coeff_table = self.coeff_table,
-                        nfeatures=self.coeff_table.shape[0],
-                        initial_features = list(self.xtrain.columns),
-                        intercept = self.intercept_corr)
-
-
-
-
-
-class WorkflowPolyArrh(WorkflowPoly):
-
-    def __init__(self, **kwargs):            
-        super().__init__(**kwargs)
-        self.ytrain = self.ytrain.apply(np.log)
-        
-
-    def get_trained_workflow(self):
-        return tf.TrainedWorkflowArrh(coeff_table = self.coeff_table,
-                        nfeatures=self.coeff_table.shape[0],
-                        initial_features = list(self.xtrain.columns),
-                        intercept = self.intercept_corr)
 
 
 

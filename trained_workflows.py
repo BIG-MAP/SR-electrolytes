@@ -2,15 +2,32 @@ import pandas as pd
 import sympy as sp
 import numpy as np
 
+
+
 class TrainedWorkflow:
+    """
+    Generates trained symbolic models.
+
+    Parameters
+    ----------
+    coeff_table: pd.DataFrame
+        Pandas dataframe with coefficients resulting from training
+    initial_features: list[str]
+        list of initial predictors (e.g. [T, c, r])
+    intercept: float
+        value of the trained intercept parameter. intercept = 0 for contrained models.
+
+    Returns
+    --------
+    trained_model object.
+
+    """
 
     def __init__(self, coeff_table: pd.DataFrame, 
-                nfeatures: int,
                 initial_features: list,
                 intercept: float):
         #Data
         self.coeff_table = coeff_table
-        self.nfeatures = nfeatures
         self.intercept = intercept
         self.initial_features = initial_features
         #Results
@@ -66,27 +83,3 @@ class TrainedWorkflow:
 
 
 
-
-class TrainedWorkflowArrh(TrainedWorkflow):
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.__generate_symbolic_eqn()
-
-
-
-    def __generate_symbolic_eqn(self):
-
-        if self.coeff_table.empty:
-
-            self.eqn = sp.Integer(0)
-
-        else:
-            eqn_string = 'exp( '+str(self.intercept)
-            symbols = {i:sp.Symbol(i) for i in self.initial_features}
-
-            for index, row in self.coeff_table.iterrows():
-                eqn_string += ' + {}*{}'.format(row['coeff_corr'],index)
-            
-            eqn_string += ')'
-            self.eqn = sp.sympify(eqn_string,symbols)
