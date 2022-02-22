@@ -53,6 +53,10 @@ class TrainedWorkflow:
             self.eqn = sp.sympify(eqn_string,symbols)
 
 
+    @property
+    def nfeatures(self):
+        return self.coeff_table.shape[0]
+        
 
     def predict(self, x: pd.DataFrame):
         

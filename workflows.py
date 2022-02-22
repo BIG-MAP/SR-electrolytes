@@ -213,13 +213,11 @@ class Workflow:
         if self.xtrain_gen_stand.empty:
 
             return tf.TrainedWorkflow(coeff_table = pd.DataFrame(),
-                                    nfeatures = 0,
                                     initial_features = list(self.xtrain.columns),
                                     intercept = 0)
         
         else:
             return tf.TrainedWorkflow(coeff_table = self.coeff_table,
-                                    nfeatures=self.coeff_table.shape[0],
                                     initial_features = list(self.xtrain.columns),
                                     intercept = self.intercept_corr)
 
@@ -243,11 +241,10 @@ class Workflow:
                 if self.xtrain_gen_stand.empty:
                     break #break loop if sparsification resulted in no predictors
                 
-
-
-        
         
         self.correct_coeffs()
+
+        print('TRAINING COMPLETE')
 
         return self.get_trained_workflow()
 
