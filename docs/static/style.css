@@ -1,0 +1,65 @@
+
+h2, p {color: #444;
+    text-align: left;}
+
+    body {background: #CFD8DC; 
+        margin: 0; padding: 0;
+        display: table-cell;
+        vertical-align: middle;}
+    
+    html {
+            display: table;
+            margin: auto;
+        }
+    
+    a {color:lightseagreen }
+
+
+#header {display: grid;
+    grid-template-columns: 120px 500px 120px;
+    grid-gap: 10px;
+    background-color: #fff;
+    color: #444}
+
+
+.title {
+    background-color: #fff;
+    color: dimgrey;
+    border-radius: 0px;
+    padding: 0px;
+    text-align: center;}
+
+.logos {
+    background-color: #fff;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;}
+
+.text-containers {
+        padding: 20px;
+        width: 740px;
+        text-align: justify;}
+
+#plot {text-align:center;
+}
+
+#footer {display: grid;
+    grid-template-columns: 120px 620px;
+    grid-gap: 10px;
+    color: #444}
+
+#eu-logo {
+        border-radius: 5px;
+        padding: 20px;}
+
+#text-container-akn {
+    padding: 20px;
+    width: 620px;
+    text-align: justify;}
+
+
+
+
+
+
+

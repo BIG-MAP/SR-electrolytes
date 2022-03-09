@@ -3,49 +3,82 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="utf-8">
     <meta name="description" content="My description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./static/style.css">
 
     <title>EFlores2022_SR</title>
 </head>
 
 <body>
-    <header>
-        <a href="/"><img alt="Logo" src="./static/logo_bigmap.png" height="70"></a>
-        <a href="/"><img alt="Logo" src="./static/logo_bt2030p.png" height="70"></a>
-        
 
-        <h1>Symbolic regression on Li-ion electrolyte systems</h1>
-            <p>
-            This small app illustrates the predicted conductivity of a Li-ion battery electrolyte as a function of formulation and temperature. <br>
-            The predictions are based on a closed-form expression, found through a symbolic regression algorithm. The electrolyte consist of a <br>
+    <div id="header"> 
+        <div class="logos"> 
+            <a href="/"><img alt="Logo" src="./static/logo_bigmap.png" height="70"></a>
+        </div>
+        <div class="title"> 
+            <h1>Symbolic regression of Li-ion electrolyte conductivity</h1>
+        </div>
+        <div class="logos"> 
+            <a href="/"><img alt="Logo" src="./static/logo_bt2030p.png" height="70"></a>
+        </div>
+    
+
+    </div>
+
+
+    <div class = "text-containers"> 
+        <p>
+            This small app illustrates the predicted conductivity of a Li-ion battery electrolyte as a function of formulation and temperature. 
+            The predictions are based on a closed-form expression, found through a symbolic regression algorithm. The electrolyte consist of a 
             LiPF<sub>6</sub> salt and PC/EC/EMC solvent mixture. Check out the <a href="https://github.com/BIG-MAP/SR-electrolytes">Github page</a> 
-            for the code and examples, and the article for full details:<br>
-            <br>
+            for the code and examples, and the article for full details:
+            <br> <br>
             Flores, E. et al. <i>Learning the laws of lithium-ion electrolyte transport using symbolic regression.</i> ChemRxiv (2022). <a href=https://doi.org/10.26434/chemrxiv-2022-nmmd4>doi:10.26434/chemrxiv-2022-nmmd4</a>
-            </p>
-            <br>
+        </p>
+        
+    </div>
 
-        <hr>
-
+    <div class="text-containers"> 
+        
         <h2>Explore the predictions from the model</h2>
             <p>
-                The predictions are represented as a contour plot as a function of PC to EC ratio, salt concentration and temperature. <br>
-                Move the slider to control the temperature to explore how conductivity changes in the PC ratio vs LiPF6 concentration space.
+                The predictions are represented as a contour plot as a function of PC to EC ratio, salt concentration and temperature. 
+                Move the slider to control the temperature to explore how conductivity changes in the PC ratio <i>vs.</i> LiPF<sub>6</sub> concentration space.
             </p>
+
+    <div id="plot">
+        
             <embed 
             type="text/html" 
             src="./static/standalone_app.html"
-            width="900"
-            height="500"
+            width="650"
+            height="480"
             > </embed>
         
-        <hr>
+    </div>
 
-        <h3>Aknowledgements</h3>
-        <a href="/"><img alt="Logo" src="./static/EU_emblem.jpg" height="70"></a>
-        <p>This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 957189.</p>
+ 
+    <div id="footer">  
+        <div id="eu-logo">       
+            <a href="/"><img alt="Logo" src="./static/EU_emblem.jpg" height="70"></a>
+        </div>
+
+        <div id = "text-container-akn"> 
+            <p>This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 957189.</p>
+        </div>  
+        
+    </div>
+
+    <header>
+
+        
+        
+        
+
+        
 
     
