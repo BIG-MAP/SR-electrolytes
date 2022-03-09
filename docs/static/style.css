@@ -10,7 +10,8 @@ body {background: #CFD8DC;
 
 
 h2, p {color: #444;
-    text-align: left;}
+    text-align: left;
+   margin: 0;}
 
 a {color:lightseagreen }
 
