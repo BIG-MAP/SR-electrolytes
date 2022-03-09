@@ -6,7 +6,7 @@ body {background: #CFD8DC;
     margin: 0; padding: 0;
     display: table-cell;
     vertical-align: middle;
-    font-family: 'Raleway';}
+    font-family: "Raleway", sans-serif;}
     
     html {
             display: table;
