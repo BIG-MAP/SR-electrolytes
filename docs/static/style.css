@@ -2,10 +2,11 @@
 h2, p {color: #444;
     text-align: left;}
 
-    body {background: #CFD8DC; 
-        margin: 0; padding: 0;
-        display: table-cell;
-        vertical-align: middle;}
+body {background: #CFD8DC; 
+    margin: 0; padding: 0;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Raleway';}
     
     html {
             display: table;
