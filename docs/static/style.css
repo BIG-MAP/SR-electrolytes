@@ -1,18 +1,19 @@
+   
+html {display: table;
+        margin: auto;}
+    
+body {background: #CFD8DC; 
+    margin: 0; padding: 0;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: "Raleway", sans-serif;}
+
 
 h2, p {color: #444;
-    text-align: left;}
+    text-align: left;
+   margin: 0;}
 
-    body {background: #CFD8DC; 
-        margin: 0; padding: 0;
-        display: table-cell;
-        vertical-align: middle;}
-    
-    html {
-            display: table;
-            margin: auto;
-        }
-    
-    a {color:lightseagreen }
+a {color:lightseagreen }
 
 
 #header {display: grid;
