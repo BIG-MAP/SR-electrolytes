@@ -34,11 +34,11 @@ a {color:lightseagreen }
     background-color: #fff;
     color: #fff;
     border-radius: 5px;
-    padding: 20px;}
+    padding: 20px 0px;}
 
 .text-containers {
-        padding: 20px;
-        width: 740px;
+        padding: 20px 0px;
+        width: 760px;
         text-align: justify;}
 
 #plot {text-align:center;
@@ -54,7 +54,7 @@ a {color:lightseagreen }
         padding: 20px;}
 
 #text-container-akn {
-    padding: 20px;
+    padding: 35px 10px;
     width: 620px;
     text-align: justify;}
 
