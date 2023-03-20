@@ -3,7 +3,7 @@ Symbolic Regression on High-throughput electrolyte data.
 
 This repositrory contains modules and an example to train symbolic regression models, following the methodology in the article:  
 
- *Flores, E. et al. Learning the laws of lithium-ion electrolyte transport using symbolic regression. ChemRxiv (2022). [doi:10.26434/chemrxiv-2022-nmmd4](https://doi.org/10.26434/chemrxiv-2022-nmmd4) This content is a preprint and has not been peer-reviewed.*
+ *Flores, Eibar, et al. "Learning the laws of lithium-ion transport in electrolytes using symbolic regression." Digital Discovery 1.4 (2022): 440-447. DOI:[10.1039/D2DD00027J](doi.org/10.1039/D2DD00027J)*
 
 
 ## Interactive plot of model predictions
